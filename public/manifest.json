@@ -1,0 +1,23 @@
+
+{
+  "name": "Momento - The To-Do App That Judges You Like Your Mom",
+  "short_name": "Momento",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0f0f0",
+  "theme_color": "#FF61D8",
+  "icons": [
+    {
+      "src": "/lovable-uploads/ece93675-ce52-412f-8db1-87d5b998c7fb.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/ece93675-ce52-412f-8db1-87d5b998c7fb.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

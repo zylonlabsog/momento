@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Neubrutalism button styles */
+.neubrutalism-button {
+  @apply px-6 py-3 border-2 border-black font-bold rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition-all duration-200 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0)] hover:translate-x-[-2px] hover:translate-y-[-2px];
+}
+
+.neubrutalism-button-sm {
+  @apply px-3 py-2 border-2 border-black font-bold rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0)] transition-all duration-200 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0)] hover:translate-x-[-1px] hover:translate-y-[-1px];
+}
+
+/* Neubrutalism box styles */
+.neubrutalism-box {
+  @apply border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0)];
+}
+
+/* Floating shape styles */
+.floating-shape {
+  @apply absolute rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0)];
+}
+
+/* Jitter animation */
+@keyframes jitter {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(-3px); }
+  20% { transform: translateX(3px); }
+  30% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  50% { transform: translateX(0); }
+}
+
+.animate-jitter {
+  animation: jitter 0.3s ease-in-out;
+}
+
+/* Float animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Popup animation */
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-popup {
+  animation: popup 0.5s ease-out;
+}
+
+/* Add new animations */
+@keyframes extreme-shake {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-15px) rotate(-2deg); }
+  20% { transform: translateX(15px) rotate(2deg); }
+  30% { transform: translateX(-15px) rotate(-3deg); }
+  40% { transform: translateX(15px) rotate(3deg); }
+  50% { transform: translateX(-15px) rotate(-1deg); }
+  60% { transform: translateX(15px) rotate(1deg); }
+  70% { transform: translateX(-15px) rotate(-2deg); }
+  80% { transform: translateX(15px) rotate(2deg); }
+  90% { transform: translateX(-15px) rotate(-1deg); }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-5px, 5px); }
+  40% { transform: translate(-5px, -5px); }
+  60% { transform: translate(5px, 5px); }
+  80% { transform: translate(5px, -5px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-text {
+  0% { text-shadow: 2px 0 #ff0000, -2px 0 #00ff00; }
+  25% { text-shadow: -2px 0 #ff0000, 2px 0 #00ff00; }
+  50% { text-shadow: 2px 0 #0000ff, -2px 0 #ff0000; }
+  75% { text-shadow: -2px 0 #0000ff, 2px 0 #00ff00; }
+  100% { text-shadow: 2px 0 #ff0000, -2px 0 #00ff00; }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-extreme-shake {
+  animation: extreme-shake 0.8s ease-in-out infinite;
+}
+
+.animate-glitch {
+  animation: glitch 0.2s ease-in-out infinite;
+}
+
+.animate-glitch-text {
+  animation: glitch-text 0.3s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
